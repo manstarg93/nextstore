@@ -8,16 +8,16 @@ import {
 } from './NavDropdown.styles';
 
 import { BiUpArrow } from 'react-icons/bi';
+import { IDropdownTypes } from './navData';
 
 interface IDropdown {
   title: string;
+  dropDownData: IDropdownTypes;
 }
 
-const NavDropdown = ({ title }: IDropdown) => {
+const NavDropdown = ({ title, dropDownData }: IDropdown) => {
   const dispatch = useAppDispatch();
-  const { isShowDropdown, dropDownData, navLocation } = useAppSelector(
-    (state) => state.ui
-  );
+  const { isShowDropdown, navLocation } = useAppSelector((state) => state.ui);
 
   if (dropDownData?.title === title) {
     return (
@@ -26,7 +26,7 @@ const NavDropdown = ({ title }: IDropdown) => {
           <BiUpArrow />
         </UpArrowContainer>
         <NavDropDownItemsContainer>
-          {dropDownData?.dropdownData.map((item) => {
+          {dropDownData.dropDown.map((item) => {
             return (
               <NavDropDownLink
                 onClick={() => dispatch(hideDropDown())}
@@ -36,7 +36,7 @@ const NavDropdown = ({ title }: IDropdown) => {
                 {item.title}
               </NavDropDownLink>
             );
-          }) ?? null}
+          })}
         </NavDropDownItemsContainer>
       </NavDropDownContainer>
     );

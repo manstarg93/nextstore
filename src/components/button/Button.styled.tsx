@@ -17,8 +17,4 @@ export const ButtonContainer = styled.button<ButonStyleProps>`
   text-transform: capitalize;
 
   text-align: center;
-
-  &:hover {
-    /* background-color: ${variables.white}; */
-  }
 `;

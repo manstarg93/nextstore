@@ -2,13 +2,13 @@ import { IDropdownTypes } from '@/components/nav/navData';
 import { IProducts } from '@/components/types/productTypes';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { slideDirection } from './helperFunctions';
-import { uiType } from './uiTypes';
+import { dropDownTitleAndLocationType, uiType } from './uiTypes';
 
 const initialState: uiType = {
   isShowDropdown: false,
   phoneIndex: 0,
   isShowSideBar: false,
-  dropDownData: null,
+  dropdownTitle: '',
   navLocation: {
     left: 0,
     right: 0,
@@ -19,31 +19,30 @@ export const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    showDropDown: (
+    showDropDownWithLocation: (
       state,
-      action: PayloadAction<{
-        navItems: IDropdownTypes;
-        navLocation: { left: number; right: number };
-      }>
+      action: PayloadAction<dropDownTitleAndLocationType>
     ) => {
-      const { navItems, navLocation } = action.payload;
+      const { dropdownTitle, location } = action.payload;
       state.isShowDropdown = true;
-      state.dropDownData = navItems;
-      state.navLocation = navLocation;
+      state.navLocation = location;
+      state.dropdownTitle = dropdownTitle;
     },
-    showOnlyDropdown: (state, action: PayloadAction<IDropdownTypes>) => {
+    showOnlyDropdown: (state, action: PayloadAction<string>) => {
       state.isShowDropdown = true;
-      state.dropDownData = action.payload;
+      state.dropdownTitle = action.payload;
     },
     showSideBar: (state) => {
       state.isShowSideBar = true;
+      state.isShowDropdown = false;
+      state.dropdownTitle = '';
     },
     hideSideBar: (state) => {
       state.isShowSideBar = false;
     },
     hideDropDown: (state) => {
       state.isShowDropdown = false;
-      state.dropDownData = null;
+      state.dropdownTitle = '';
     },
     nextPhoneIndex: (state, action: PayloadAction<IProducts>) => {
       state.phoneIndex = slideDirection(
@@ -64,7 +63,7 @@ export const uiSlice = createSlice({
 
 export default uiSlice.reducer;
 export const {
-  showDropDown,
+  showDropDownWithLocation,
   hideDropDown,
   nextPhoneIndex,
   prevPhoneIndex,

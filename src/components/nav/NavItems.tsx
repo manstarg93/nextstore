@@ -1,7 +1,7 @@
 import {
   hideDropDown,
   hideSideBar,
-  showDropDown,
+  showDropDownWithLocation,
   showOnlyDropdown,
 } from '@/features/store/uiSlice';
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
@@ -22,6 +22,8 @@ import {
   NavOverlay,
 } from './NavItems.styles';
 import NavDropdown from './NavDropdown';
+import { useEffect, useState } from 'react';
+import { useWindowSize } from '@/hooks/windowSizeHook';
 
 interface INavData {
   data: navDataType;
@@ -29,21 +31,24 @@ interface INavData {
 
 const NavItems = ({ data }: INavData) => {
   const dispatch = useAppDispatch();
-  const { isShowSideBar, dropDownData } = useAppSelector((state) => state.ui);
+  const { isShowSideBar, dropdownTitle } = useAppSelector((state) => state.ui);
+
+  const { windowSize } = useWindowSize();
   const showDropdownHandler = (
-    navItems: IDropdownTypes,
+    dropdownTitle: string,
     e: React.MouseEvent<HTMLDivElement>
   ) => {
     const boundLocation = e.currentTarget?.getBoundingClientRect();
 
-    const navandLocation = {
-      navItems,
-      navLocation: {
+    const dropDownTitleAndLocation = {
+      dropdownTitle,
+      location: {
         left: boundLocation.left,
         right: boundLocation.right,
       },
     };
-    dispatch(showDropDown(navandLocation));
+
+    dispatch(showDropDownWithLocation(dropDownTitleAndLocation));
   };
 
   return (
@@ -52,11 +57,25 @@ const NavItems = ({ data }: INavData) => {
         <CloseIConContainer>
           <AiOutlineClose onClick={() => dispatch(hideSideBar())} />
         </CloseIConContainer>
-        {data.map((item) => {
+        {data?.map((item) => {
+          const DropDownArrows =
+            item.dropdownData.title !== dropdownTitle ? (
+              <DropDownArrowDownMobileContainer>
+                <MdKeyboardArrowDown
+                  onClick={() => dispatch(showOnlyDropdown(item.title))}
+                />
+              </DropDownArrowDownMobileContainer>
+            ) : (
+              <DropDownArrowUpMobileContainer>
+                <MdKeyboardArrowUp onClick={() => dispatch(hideDropDown())} />
+              </DropDownArrowUpMobileContainer>
+            );
           return (
             <NavItemContainer
               key={item.title}
-              onMouseOver={(e) => showDropdownHandler(item, e)}
+              onMouseOver={(e) =>
+                windowSize >= 1024 && showDropdownHandler(item.title, e)
+              }
             >
               <NavItemLinkContainer>
                 <NavItem>
@@ -68,23 +87,15 @@ const NavItems = ({ data }: INavData) => {
                   </NavItemLink>
                 </NavItem>
 
-                {dropDownData?.title.toLowerCase() ===
-                item.title.toLowerCase() ? (
-                  <DropDownArrowUpMobileContainer>
-                    <MdKeyboardArrowUp />
-                  </DropDownArrowUpMobileContainer>
-                ) : (
-                  (
-                    <DropDownArrowDownMobileContainer
-                      onClick={() => dispatch(showOnlyDropdown(item))}
-                    >
-                      <MdKeyboardArrowDown />
-                    </DropDownArrowDownMobileContainer>
-                  ) ?? null
-                )}
+                {DropDownArrows}
               </NavItemLinkContainer>
 
-              <NavDropdown title={item.title} />
+              {dropdownTitle === item.dropdownData.title && (
+                <NavDropdown
+                  title={item.title}
+                  dropDownData={item.dropdownData}
+                />
+              )}
             </NavItemContainer>
           );
         })}

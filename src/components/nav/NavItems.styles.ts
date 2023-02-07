@@ -13,7 +13,7 @@ export const NavItemsContainer = styled.div<INavItems>`
   top: 0;
   bottom: 0;
   left: 0;
-  width: 55%;
+  width: 70%;
   z-index: 99;
   padding: 1rem;
   overflow: hidden;
