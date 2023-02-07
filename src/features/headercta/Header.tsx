@@ -6,8 +6,12 @@ import {
 } from './Header.styles';
 
 import header from '../../assets/img/headerImg.jpg';
+import headerMin from '../../assets/img/headerImgp.jpg';
+import Button from '@/components/button/Button';
+import { useWindowSize } from '@/hooks/windowSizeHook';
 
 const Header = () => {
+  const { windowSize } = useWindowSize();
   return (
     <HeaderContainer>
       <HeaderDescription>
@@ -24,7 +28,7 @@ const Header = () => {
       <HeaderOverlay
         fill
         priority={true}
-        src={header}
+        src={windowSize >= 1024 ? header : headerMin}
         placeholder="blur"
         alt="headerimage"
       />
