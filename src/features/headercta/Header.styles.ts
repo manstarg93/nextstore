@@ -10,9 +10,9 @@ export const HeaderContainer = styled.div<IHeaderStyles>`
   width: 100%;
   display: grid;
   position: relative;
-
+  overflow: hidden;
   height: 70vh;
-  padding: 1rem 0;
+  padding: 1rem;
 
   align-items: center;
   background-color: ${variables.darkGray};
@@ -36,14 +36,16 @@ export const HeaderDescription = styled.div`
   justify-content: center;
   grid-gap: 1rem;
   align-content: center;
-  padding: 20px;
+  padding: 1rem;
   color: ${variables.white};
-  width: 30rem;
   z-index: 90;
   p {
     line-height: 1.5;
   }
   h1 {
+  }
+  @media screen and (min-width: ${device.laptop}) {
+    max-width: 50%;
   }
 `;
 

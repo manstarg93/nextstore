@@ -1,22 +1,12 @@
 import { boxShadow, device, variables } from '@/styles/globalStyle';
 import styled, { keyframes } from 'styled-components';
 
-const fade = keyframes`
-0%{
- opacity: 50%;
-}
-50%{
- opacity: 80%;
-}
-100%{
-   opacity: 100%;
-}
-`;
-
 export const ProductDisplayContainer = styled.div`
   transition: all 0.5s linear;
   display: grid;
   position: relative;
+
+  width: 100%;
   cursor: pointer;
   grid-template-rows: 30rem;
   box-shadow: ${boxShadow(variables.gray)};
@@ -35,7 +25,8 @@ export const TitleCTA = styled.h3`
 `;
 
 export const ProductImageContainer = styled.div`
-  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 export const ProductImage = styled.img`

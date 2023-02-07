@@ -5,7 +5,7 @@ import {
   HeaderOverlay,
 } from './Header.styles';
 
-import headerMin from '../../assets/img/headerImgp.jpg';
+import headerMin from '../../assets/img/headerImg.jpg';
 import Button from '@/components/button/Button';
 
 const Header = () => {
@@ -28,7 +28,7 @@ const Header = () => {
         priority={true}
         src={headerMin}
         placeholder="blur"
-        alt="header image"
+        alt="headerimage"
       />
     </HeaderContainer>
   );

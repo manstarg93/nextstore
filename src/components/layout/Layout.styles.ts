@@ -9,6 +9,8 @@ export const LayoutMain = styled.main`
   grid-gap: 1rem;
   padding: 0;
   margin: 0 auto;
+  width: 95%;
+  overflow: hidden;
 `;
 
 export const FooterContainer = styled.footer``;

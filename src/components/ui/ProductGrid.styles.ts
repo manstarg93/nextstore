@@ -2,10 +2,12 @@ import { device, variables } from '@/styles/globalStyle';
 import styled, { keyframes } from 'styled-components';
 
 export const ProjectGridContainer = styled.div`
-  display: grid;
   grid-row-gap: 5rem;
   position: relative;
-  overflow: hidden;
+  margin: 0 auto;
+
+  width: 100%;
+  display: grid;
 `;
 
 export const ProductGridTitle = styled.h2`
@@ -18,9 +20,7 @@ export const ProjectGridItemContainer = styled.div`
   text-align: center;
   display: grid;
   grid-gap: 1rem;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, max-content));
   margin: 0 auto;
   width: 100%;
   justify-content: center;
@@ -28,8 +28,6 @@ export const ProjectGridItemContainer = styled.div`
   overflow: hidden;
 
   @media screen and (min-width: ${device.tablet}) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, max-content));
   }
 `;
 
