@@ -14,13 +14,13 @@ export const NavAndDropDownContainer = styled.div`
   margin: 0 auto;
   position: sticky;
   top: 0;
-  padding: 2rem 0;
+  padding: 2rem;
   left: 0;
   right: 0;
   height: 5rem;
   z-index: 97;
   background-color: ${variables.white};
-
+  border-bottom: solid 0.05rem ${variables.darkGray};
   align-items: center;
 `;
 

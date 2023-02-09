@@ -22,10 +22,10 @@ const Header = () => {
       </HeaderDescription>
 
       <HeaderOverlay
-        fill
         priority={true}
+        width={2400}
+        height={1600}
         src={header}
-        placeholder="blur"
         alt="headerimage"
       />
     </HeaderContainer>

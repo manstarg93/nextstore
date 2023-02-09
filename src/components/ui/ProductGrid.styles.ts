@@ -19,15 +19,17 @@ export const ProductGridTitle = styled.h2`
 export const ProjectGridItemContainer = styled.div`
   text-align: center;
   display: grid;
+  grid-gap: 0;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, max-content));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+
   margin: 0 auto;
   width: 100%;
   justify-content: center;
   transition: all 0.4s linear;
-  overflow: hidden;
 
-  @media screen and (min-width: ${device.tablet}) {
+  @media screen and (min-width: ${device.laptop}) {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, max-content));
   }
 `;
 

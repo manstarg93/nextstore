@@ -13,7 +13,6 @@ import {
   CloseIConContainer,
   DropDownArrowDownMobileContainer,
   DropDownArrowUpMobileContainer,
-  DropdownContainerMobile,
   NavItem,
   NavItemContainer,
   NavItemLink,
@@ -59,7 +58,7 @@ const NavItems = ({ data }: INavData) => {
         </CloseIConContainer>
         {data?.map((item) => {
           const DropDownArrows =
-            item.dropdownData.title !== dropdownTitle ? (
+            item.dropdownData?.title !== dropdownTitle ? (
               <DropDownArrowDownMobileContainer>
                 <MdKeyboardArrowDown
                   onClick={() => dispatch(showOnlyDropdown(item.title))}
@@ -81,7 +80,7 @@ const NavItems = ({ data }: INavData) => {
                 <NavItem>
                   <NavItemLink
                     href={item.link}
-                    onClick={() => dispatch(hideDropDown())}
+                    onClick={() => dispatch(hideSideBar())}
                   >
                     {item.title}
                   </NavItemLink>
@@ -90,7 +89,7 @@ const NavItems = ({ data }: INavData) => {
                 {DropDownArrows}
               </NavItemLinkContainer>
 
-              {dropdownTitle === item.dropdownData.title && (
+              {dropdownTitle === item.dropdownData?.title && (
                 <NavDropdown
                   title={item.title}
                   dropDownData={item.dropdownData}

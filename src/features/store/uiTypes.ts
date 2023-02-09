@@ -6,6 +6,8 @@ export type uiType = {
   isShowSideBar: boolean;
   dropdownTitle: string;
   navLocation: { left: number; right: number };
+  isDropDownFilter: boolean;
+  productFilterOption: string;
 };
 
 export type dropDownTitleAndLocationType = {

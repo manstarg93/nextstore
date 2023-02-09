@@ -1,15 +1,24 @@
 import { boxShadow, device, variables } from '@/styles/globalStyle';
+import Image from 'next/image';
 import styled, { keyframes } from 'styled-components';
 
 export const ProductDisplayContainer = styled.div`
   transition: all 0.5s linear;
   display: grid;
+
+  overflow: hidden;
+
+  cursor: pointer;
+  grid-template-rows: 1fr auto;
+
+  @media screen and (min-width: ${device.laptop}) {
+  }
+`;
+
+export const ProductImageContainer = styled.div`
   position: relative;
 
-  width: 100%;
-  cursor: pointer;
-  grid-template-rows: 30rem;
-  box-shadow: ${boxShadow(variables.gray)};
+  overflow: hidden;
 `;
 
 export const TitleCTA = styled.h3`
@@ -24,17 +33,12 @@ export const TitleCTA = styled.h3`
   z-index: 9;
 `;
 
-export const ProductImageContainer = styled.div`
-  width: 100%;
-  margin: 0 auto;
-`;
-
-export const ProductImage = styled.img`
+export const ProductImage = styled(Image)`
   object-fit: cover;
-  transition: all 0.6s linear;
-  width: 100%;
-  height: 100%;
+  transition: all 0.3s linear;
+
   filter: brightness(60%);
+  will-change: transform;
 
   &:hover {
     transform: scale(1.03);
@@ -54,12 +58,19 @@ export const RatingContainer = styled.div`
 `;
 
 export const TitleAndPriceContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+
   justify-content: space-between;
+  width: 100%;
+  grid-gap: 1rem;
+
   align-items: center;
+  margin: 0 auto;
 `;
 
 export const ProductDescriptionAndPrice = styled.p`
+  justify-self: flex-start;
   text-transform: upperCase;
   color: ${variables.black};
   font-weight: lighter;

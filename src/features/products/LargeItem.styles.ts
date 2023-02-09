@@ -1,21 +1,29 @@
+import Button from '@/components/button/Button';
 import { ButtonContainer } from '@/components/button/Button.styled';
-import { variables } from '@/styles/globalStyle';
+import { device, variables } from '@/styles/globalStyle';
+import Image from 'next/image';
 import styled from 'styled-components';
 export const LargeItemContainer = styled.div`
   overflow: hidden;
   cursor: pointer;
   position: relative;
   grid-template-rows: 30rem;
+  width: 25rem;
+  height: 30rem;
   display: grid;
+
+  @media screen and (min-width: ${device.laptop}) {
+    width: 22rem;
+  }
 `;
 
-export const LargeItemImage = styled.img`
+export const LargeItemImage = styled(Image)`
   object-fit: cover;
-  transition: all 0.6s linear;
+  transition: all 0.3s linear;
   width: 100%;
   height: 100%;
   filter: brightness(60%);
-
+  will-change: transform;
   &:hover {
     transform: scale(1.03);
   }
@@ -41,8 +49,7 @@ export const LargeItemDescription = styled.h4`
   width: max-content;
 `;
 
-export const LargeItemButton = styled(ButtonContainer)`
-  border: solid 0.1rem ${variables.white};
+export const LargeItemButton = styled(Button)`
   color: ${variables.white};
   padding: 1rem;
   background-color: transparent;

@@ -4,15 +4,24 @@ import {
   PageSectionContainer,
 } from './Layout.styles';
 import Navigation from '../nav/Navigation';
+import { Suspense } from 'react';
+import Loading from '../ui/loading';
 
-interface ILayoutType extends React.ComponentPropsWithoutRef<'main'> {}
+interface ILayoutType extends React.ComponentPropsWithoutRef<'main'> {
+  mediumWidth?: boolean;
+}
 
-const Layout = ({ children }: ILayoutType) => {
+const Layout = ({ children, mediumWidth }: ILayoutType) => {
   return (
     <LayoutMain>
       <Navigation />
 
-      <PageSectionContainer>{children}</PageSectionContainer>
+      <Suspense fallback={<Loading />}>
+        <PageSectionContainer mediumWidth={mediumWidth}>
+          {children}
+        </PageSectionContainer>
+      </Suspense>
+
       <FooterContainer>Footer</FooterContainer>
     </LayoutMain>
   );

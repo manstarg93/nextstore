@@ -1,23 +1,28 @@
-import { variables } from '@/styles/globalStyle';
+import { device, variables } from '@/styles/globalStyle';
 import styled from 'styled-components';
 
-export const LayoutMain = styled.main`
-  max-width: 95%;
+interface ILayoutStyles {
+  mediumWidth?: boolean;
+}
+
+export const LayoutMain = styled.section<ILayoutStyles>`
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   padding: 0;
   margin: 0 auto;
-  width: 95%;
-  overflow: hidden;
+  width: 100%;
 `;
 
 export const FooterContainer = styled.footer``;
 
-export const PageSectionContainer = styled.section`
+export const PageSectionContainer = styled.section<ILayoutStyles>`
   margin: 0 auto;
   display: grid;
-  width: 100%;
+
   grid-row-gap: 4rem;
+  width: 95%;
+  @media screen and (min-width: ${device.laptop}) {
+    width: ${(props) => (props.mediumWidth ? '80%' : '95%')};
+  }
 `;

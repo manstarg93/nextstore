@@ -11,7 +11,7 @@ export const HeaderContainer = styled.div<IHeaderStyles>`
   display: grid;
   position: relative;
   overflow: hidden;
-  height: 70vh;
+  height: 30rem;
   padding: 1rem;
 
   align-items: center;
@@ -57,6 +57,6 @@ export const HeaderImageContainer = styled.div`
   }
 `;
 
-export const HeaderButton = styled(ButtonContainer)`
+export const HeaderButton = styled(Button)`
   background-color: ${variables.white};
 `;

@@ -32,6 +32,7 @@ const LargeItem = dynamic(() => import('../features/products/LargeItem'));
 import PageSummary from '@/features/summary/PageSummary';
 import Header from '@/features/headercta/Header';
 import dynamic from 'next/dynamic';
+import HeadComponent from '@/components/HeadComponent';
 
 interface Iindex {
   mensShirt: IProducts;
@@ -56,12 +57,7 @@ export default function Home({
 }: Iindex) {
   return (
     <>
-      <Head>
-        <title>Nxt clothing</title>
-        <meta name="description" content="Nxt clothing" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <HeadComponent />
       <Layout>
         <Header />
         <ProductGrid title={'Womens dress'} products={womensDress}>
@@ -75,15 +71,24 @@ export default function Home({
           })}
         </ProductGrid>
         <LargeItemDisplay>
-          {largeItemHandler(womensShoes, mensShoes, fragrances).map(
-            (product) => {
-              return <LargeItem key={product.id} {...product} />;
-            }
-          )}
+          {largeItemHandler(
+            womensShoes,
+            mensShoes,
+            fragrances,
+            mensWatches
+          ).map((product) => {
+            return <LargeItem key={product.id} {...product} />;
+          })}
         </LargeItemDisplay>
         <ProductGrid title={'latest skincare products'} products={skinCare}>
-          {skinCare.slice(1, 4).map((product) => {
-            return <ProductDisplay key={product.id} {...product} />;
+          {skinCare.slice(1, 5).map((product) => {
+            return (
+              <ProductDisplay
+                key={product.id}
+                {...product}
+                link={`/products/${product.title}`}
+              />
+            );
           })}
         </ProductGrid>
         <PageSummary />

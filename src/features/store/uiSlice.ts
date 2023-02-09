@@ -13,6 +13,8 @@ const initialState: uiType = {
     left: 0,
     right: 0,
   },
+  isDropDownFilter: false,
+  productFilterOption: 'all',
 };
 
 export const uiSlice = createSlice({
@@ -44,6 +46,14 @@ export const uiSlice = createSlice({
       state.isShowDropdown = false;
       state.dropdownTitle = '';
     },
+    toggleDropDownFilter: (state) => {
+      state.isDropDownFilter = !state.isDropDownFilter;
+    },
+
+    setDropDownOptions: (state, action: PayloadAction<string>) => {
+      state.productFilterOption = action.payload;
+    },
+
     nextPhoneIndex: (state, action: PayloadAction<IProducts>) => {
       state.phoneIndex = slideDirection(
         action.payload,
@@ -70,4 +80,6 @@ export const {
   showSideBar,
   hideSideBar,
   showOnlyDropdown,
+  toggleDropDownFilter,
+  setDropDownOptions,
 } = uiSlice.actions;

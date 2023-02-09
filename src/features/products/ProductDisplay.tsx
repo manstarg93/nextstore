@@ -11,6 +11,7 @@ import {
 import { IProductDisplay } from './productDisplayTypes';
 
 import { AiFillStar } from 'react-icons/ai';
+import { useRouter } from 'next/router';
 const ProductDisplay = ({
   staticTitle,
   id,
@@ -18,28 +19,35 @@ const ProductDisplay = ({
   title,
   price,
   rating,
+  link,
 }: IProductDisplay) => {
+  const router = useRouter();
   return (
-    <ProductDisplayContainer>
-      {staticTitle && <TitleCTA>{staticTitle}</TitleCTA>}
-
+    <ProductDisplayContainer onClick={() => router.push(`${link}`)}>
       <ProductImageContainer>
-        <ProductImage src={thumbnail} alt={staticTitle || title} />
+        {staticTitle && <TitleCTA>{staticTitle}</TitleCTA>}
+        <ProductImage
+          src={thumbnail}
+          width={400}
+          height={450}
+          alt={title ? title : 'alt placeholder'}
+        />
       </ProductImageContainer>
+
       {title && (
         <CaptionContainer>
           <TitleAndPriceContainer>
             <ProductDescriptionAndPrice>{title}</ProductDescriptionAndPrice>
             <ProductDescriptionAndPrice>${price}</ProductDescriptionAndPrice>
+            <RatingContainer>
+              {rating &&
+                Array<number>(Math.round(rating))
+                  .fill(0)
+                  .map((rat, i) => {
+                    return <AiFillStar key={i} />;
+                  })}
+            </RatingContainer>
           </TitleAndPriceContainer>
-          <RatingContainer>
-            {rating &&
-              Array<number>(Math.round(rating))
-                .fill(0)
-                .map((rat, i) => {
-                  return <AiFillStar key={i} />;
-                })}
-          </RatingContainer>
         </CaptionContainer>
       )}
     </ProductDisplayContainer>

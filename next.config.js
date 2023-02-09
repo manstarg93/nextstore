@@ -8,12 +8,13 @@ const nextConfig = {
   },
 
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'dummyjson.com/',
+        hostname: 'i.dummyjson.com',
         port: '',
-        pathname: 'data/products/**',
+        pathname: '/data/products/**',
       },
     ],
   },

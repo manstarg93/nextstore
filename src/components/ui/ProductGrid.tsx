@@ -14,13 +14,14 @@ interface IprojectGrid {
   children: React.ReactNode;
   title?: string;
   products: IProducts;
+  id?: string | undefined;
 }
 
-const ProductGrid = ({ children, products, title }: IprojectGrid) => {
+const ProductGrid = ({ children, products, title, id }: IprojectGrid) => {
   const dispatch = useAppDispatch();
 
   return (
-    <ProjectGridContainer>
+    <ProjectGridContainer id={id}>
       {title && <ProductGridTitle>{title}</ProductGridTitle>}
 
       <ProjectGridItemContainer>{children}</ProjectGridItemContainer>

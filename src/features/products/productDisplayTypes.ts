@@ -5,4 +5,5 @@ export interface IProductDisplay {
   title?: string;
   price?: number;
   rating?: number;
+  link?: string;
 }

@@ -1,7 +1,7 @@
 export type navDataType = {
   title: string;
   link: string;
-  dropdownData: {
+  dropdownData?: {
     title: string;
     dropDown: { title: string; link: string }[];
   };
@@ -35,18 +35,10 @@ export const navData = [
   {
     title: 'skincare',
     link: '/skincare',
-    dropdownData: {
-      title: 'skincare',
-      dropDown: [{ title: 'skincare', link: '/skincare' }],
-    },
   },
   {
     title: 'fragrances',
     link: '/fragrances',
-    dropdownData: {
-      title: 'fragrances',
-      dropDown: [{ title: 'fragrances', link: '/skincare' }],
-    },
   },
 ];
 
