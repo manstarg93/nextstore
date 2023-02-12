@@ -15,13 +15,22 @@ interface IprojectGrid {
   title?: string;
   products: IProducts;
   id?: string | undefined;
+  gridColumn?: string;
+  gridRow?: string;
 }
 
-const ProductGrid = ({ children, products, title, id }: IprojectGrid) => {
+const ProductGrid = ({
+  children,
+  products,
+  title,
+  id,
+  gridColumn,
+  gridRow,
+}: IprojectGrid) => {
   const dispatch = useAppDispatch();
 
   return (
-    <ProjectGridContainer id={id}>
+    <ProjectGridContainer gridColumn={gridColumn} gridRow={gridRow} id={id}>
       {title && <ProductGridTitle>{title}</ProductGridTitle>}
 
       <ProjectGridItemContainer>{children}</ProjectGridItemContainer>

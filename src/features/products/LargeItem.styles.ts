@@ -7,9 +7,11 @@ export const LargeItemContainer = styled.div`
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  grid-template-rows: 30rem;
-  width: 25rem;
-  height: 30rem;
+
+  width: 300px;
+  height: 400px;
+
+  overflow: hidden;
   display: grid;
 
   @media screen and (min-width: ${device.laptop}) {
@@ -21,7 +23,6 @@ export const LargeItemImage = styled(Image)`
   object-fit: cover;
   transition: all 0.3s linear;
   width: 100%;
-  height: 100%;
   filter: brightness(60%);
   will-change: transform;
   &:hover {

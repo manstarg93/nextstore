@@ -21,13 +21,7 @@ const Header = () => {
         <HeaderButton>Shop Now</HeaderButton>
       </HeaderDescription>
 
-      <HeaderOverlay
-        priority={true}
-        width={2400}
-        height={1600}
-        src={header}
-        alt="headerimage"
-      />
+      <HeaderOverlay priority={true} src={header} alt="headerimage" />
     </HeaderContainer>
   );
 };

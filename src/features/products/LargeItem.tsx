@@ -20,8 +20,8 @@ const LargeItem = ({ description, id, image, link }: ILargeItems) => {
     <LargeItemContainer>
       <LargeItemImage
         src={image}
-        width={350}
-        height={450}
+        width={300}
+        height={400}
         alt={description ? description : 'alt placeholder'}
       />
       <LargeItemDescriptionAndButton>

@@ -1,13 +1,15 @@
 import { device, variables } from '@/styles/globalStyle';
 import styled from 'styled-components';
+import { IpageSummary } from './PageSummary';
 
-export const PageSummaryContainer = styled.article`
+export const PageSummaryContainer = styled.article<IpageSummary>`
   display: grid;
   grid-gap: 1rem;
   justify-content: center;
   align-items: center;
   text-align: center;
-
+  grid-column: ${(props) => (props.gridColumn ? props.gridColumn : 'auto')};
+  grid-row: ${(props) => (props.gridRow ? props.gridRow : 'auto')};
   margin: 0 auto;
   color: ${variables.darkGray};
 

@@ -28,8 +28,8 @@ const ProductDisplay = ({
         {staticTitle && <TitleCTA>{staticTitle}</TitleCTA>}
         <ProductImage
           src={thumbnail}
-          width={400}
-          height={450}
+          width={300}
+          height={400}
           alt={title ? title : 'alt placeholder'}
         />
       </ProductImageContainer>

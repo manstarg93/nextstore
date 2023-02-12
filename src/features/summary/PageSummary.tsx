@@ -1,8 +1,12 @@
 import { PageSummaryContainer, PageSummaryTitle } from './PageSummary.styled';
 
-const PageSummary = () => {
+export interface IpageSummary {
+  gridColumn?: string;
+  gridRow?: string;
+}
+const PageSummary = ({ gridColumn, gridRow }: IpageSummary) => {
   return (
-    <PageSummaryContainer>
+    <PageSummaryContainer gridColumn={gridColumn} gridRow={gridRow}>
       <PageSummaryTitle>
         Get yourself and your loved ones the best gift at Nxt products
       </PageSummaryTitle>

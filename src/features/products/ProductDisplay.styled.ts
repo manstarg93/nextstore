@@ -6,10 +6,9 @@ export const ProductDisplayContainer = styled.div`
   transition: all 0.5s linear;
   display: grid;
 
-  overflow: hidden;
-
+  width: 300px;
+  height: 400px;
   cursor: pointer;
-  grid-template-rows: 1fr auto;
 
   @media screen and (min-width: ${device.laptop}) {
   }
@@ -17,8 +16,6 @@ export const ProductDisplayContainer = styled.div`
 
 export const ProductImageContainer = styled.div`
   position: relative;
-
-  overflow: hidden;
 `;
 
 export const TitleCTA = styled.h3`
@@ -27,6 +24,7 @@ export const TitleCTA = styled.h3`
   text-align: center;
   left: 50%;
   top: 50%;
+
   transform: translate(-50%, -50%);
   color: ${variables.white};
   text-transform: uppercase;

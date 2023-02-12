@@ -60,7 +60,11 @@ export default function Home({
       <HeadComponent />
       <Layout>
         <Header />
-        <ProductGrid title={'Womens dress'} products={womensDress}>
+        <ProductGrid
+          gridRow="2/3"
+          title={'Womens dress'}
+          products={womensDress}
+        >
           {productPreviewHandler(
             womensDress,
             mensShirt,
@@ -70,7 +74,7 @@ export default function Home({
             return <ProductDisplay key={product.id} {...product} />;
           })}
         </ProductGrid>
-        <LargeItemDisplay>
+        <LargeItemDisplay gridRow="3/4">
           {largeItemHandler(
             womensShoes,
             mensShoes,
@@ -80,7 +84,11 @@ export default function Home({
             return <LargeItem key={product.id} {...product} />;
           })}
         </LargeItemDisplay>
-        <ProductGrid title={'latest skincare products'} products={skinCare}>
+        <ProductGrid
+          gridRow="4/5"
+          title={'latest skincare products'}
+          products={skinCare}
+        >
           {skinCare.slice(1, 5).map((product) => {
             return (
               <ProductDisplay
@@ -91,7 +99,7 @@ export default function Home({
             );
           })}
         </ProductGrid>
-        <PageSummary />
+        <PageSummary gridRow="5/6" />
       </Layout>
     </>
   );

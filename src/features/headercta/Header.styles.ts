@@ -11,9 +11,9 @@ export const HeaderContainer = styled.div<IHeaderStyles>`
   display: grid;
   position: relative;
   overflow: hidden;
-  height: 30rem;
+  height: 60vh;
   padding: 1rem;
-
+  grid-row: 1/2;
   align-items: center;
   background-color: ${variables.darkGray};
 `;
