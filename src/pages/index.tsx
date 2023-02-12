@@ -21,7 +21,7 @@ const ProductDisplay = dynamic(
   () => import('../features/products/ProductDisplay')
 );
 import { IProducts } from '@/components/types/productTypes';
-const ProductGrid = dynamic(() => import('@/components/ui/ProductGrid'));
+const ProductGrid = dynamic(() => import('@/features/products/ProductGrid'));
 
 import {
   largeItemHandler,

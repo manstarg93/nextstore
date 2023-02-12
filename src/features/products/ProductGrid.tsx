@@ -6,7 +6,7 @@ import {
 } from './ProductGrid.styles';
 
 import { GrNext, GrPrevious } from 'react-icons/gr';
-import { IProducts } from '../types/productTypes';
+import { IProducts } from '../../components/types/productTypes';
 import { useAppDispatch } from '@/hooks/reduxHooks';
 import { nextPhoneIndex, prevPhoneIndex } from '@/features/store/uiSlice';
 

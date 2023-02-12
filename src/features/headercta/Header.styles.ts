@@ -13,6 +13,7 @@ export const HeaderContainer = styled.div<IHeaderStyles>`
   overflow: hidden;
   height: 60vh;
   padding: 1rem;
+  margin-top: 50px;
   grid-row: 1/2;
   align-items: center;
   background-color: ${variables.darkGray};

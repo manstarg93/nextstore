@@ -3,7 +3,7 @@ import Layout from '@/components/layout/Layout';
 import { IProducts } from '@/components/types/productTypes';
 import ProductFilter from '@/components/ui/ProductFilter';
 import { mensDropdown } from '@/components/ui/productFilterTypes';
-import ProductGrid from '@/components/ui/ProductGrid';
+import ProductGrid from '@/features/products/ProductGrid';
 import ProductsHeader from '@/features/headercta/ProductsHeader';
 import ProductDisplay from '@/features/products/ProductDisplay';
 import { useAppSelector } from '@/hooks/reduxHooks';

@@ -8,21 +8,16 @@ export const LargeItemContainer = styled.div`
   cursor: pointer;
   position: relative;
 
-  width: 300px;
-  height: 400px;
-
-  overflow: hidden;
   display: grid;
 
   @media screen and (min-width: ${device.laptop}) {
-    width: 22rem;
   }
 `;
 
 export const LargeItemImage = styled(Image)`
   object-fit: cover;
   transition: all 0.3s linear;
-  width: 100%;
+
   filter: brightness(60%);
   will-change: transform;
   &:hover {

@@ -6,8 +6,6 @@ export const ProductDisplayContainer = styled.div`
   transition: all 0.5s linear;
   display: grid;
 
-  width: 300px;
-  height: 400px;
   cursor: pointer;
 
   @media screen and (min-width: ${device.laptop}) {

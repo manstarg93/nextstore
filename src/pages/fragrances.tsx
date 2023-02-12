@@ -1,7 +1,7 @@
 import HeadComponent from '@/components/HeadComponent';
 import Layout from '@/components/layout/Layout';
 import { IProducts } from '@/components/types/productTypes';
-import ProductGrid from '@/components/ui/ProductGrid';
+import ProductGrid from '@/features/products/ProductGrid';
 import ProductsHeader from '@/features/headercta/ProductsHeader';
 import ProductDisplay from '@/features/products/ProductDisplay';
 import { getFragrances, getSkincare } from '@/lib/fetchData';
