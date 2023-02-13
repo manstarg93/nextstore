@@ -77,7 +77,7 @@ export const NavItem = styled.li`
 
 export const NavItemLink = styled(Link)`
   position: relative;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 
   text-transform: capitalize;
   color: ${variables.black};
