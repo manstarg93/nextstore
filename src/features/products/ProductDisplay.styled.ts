@@ -1,7 +1,6 @@
 import { boxShadow, device, variables } from '@/styles/globalStyle';
 import Image from 'next/image';
-import styled, { keyframes } from 'styled-components';
-
+import styled from '@emotion/styled';
 export const ProductDisplayContainer = styled.div`
   transition: all 0.5s linear;
   display: grid;
@@ -32,7 +31,7 @@ export const TitleCTA = styled.h3`
 export const ProductImage = styled(Image)`
   object-fit: cover;
   transition: all 0.3s linear;
-
+  aspect-ratio: attr(width) / attr(height);
   filter: brightness(60%);
   will-change: transform;
 

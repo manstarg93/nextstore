@@ -1,19 +1,17 @@
 import { device, variables } from '@/styles/globalStyle';
-import styled, { keyframes } from 'styled-components';
-
+import styled from '@emotion/styled';
 interface IProductGrid {
   gridColumn?: string;
   gridRow?: string;
 }
 
 export const ProjectGridContainer = styled.div<IProductGrid>`
-  grid-row-gap: 50px;
+  grid-row-gap: 3rem;
   position: relative;
-  margin: 50px auto;
+
   display: grid;
   grid-column: ${(props) => (props.gridColumn ? props.gridColumn : 'auto')};
   grid-row: ${(props) => (props.gridRow ? props.gridRow : 'auto')};
-  width: 100%;
 `;
 
 export const ProductGridTitle = styled.h2`

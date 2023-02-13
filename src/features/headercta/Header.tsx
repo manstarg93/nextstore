@@ -9,7 +9,7 @@ import header from '../../assets/img/headerImg.jpg';
 
 const Header = () => {
   return (
-    <HeaderContainer>
+    <HeaderContainer backGroundImage={header}>
       <HeaderDescription>
         <h1>The Home of Nxt Products</h1>
         <p>
@@ -21,7 +21,7 @@ const Header = () => {
         <HeaderButton>Shop Now</HeaderButton>
       </HeaderDescription>
 
-      <HeaderOverlay priority={true} src={header} alt="headerimage" />
+      <HeaderOverlay />
     </HeaderContainer>
   );
 };

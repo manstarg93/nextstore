@@ -1,6 +1,5 @@
 import { device } from '@/styles/globalStyle';
-import styled from 'styled-components';
-
+import styled from '@emotion/styled';
 export const ProductsHeaderContainer = styled.div`
   width: 80%;
   margin: 2rem auto;

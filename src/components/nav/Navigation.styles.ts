@@ -1,7 +1,6 @@
 import { boxShadow, device, variables } from '@/styles/globalStyle';
 import Link from 'next/link';
-import styled from 'styled-components';
-
+import styled from '@emotion/styled';
 interface InavLocation {
   navLocation: {
     left: number;
@@ -18,6 +17,7 @@ export const NavAndDropDownContainer = styled.div`
   left: 0;
   right: 0;
   height: 5rem;
+  grid-row: 1/2;
   z-index: 97;
   background-color: ${variables.white};
   border-bottom: solid 0.05rem ${variables.darkGray};

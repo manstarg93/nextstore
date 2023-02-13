@@ -2,7 +2,7 @@ import Button from '@/components/button/Button';
 import { ButtonContainer } from '@/components/button/Button.styled';
 import { device, variables } from '@/styles/globalStyle';
 import Image from 'next/image';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 export const LargeItemContainer = styled.div`
   overflow: hidden;
   cursor: pointer;

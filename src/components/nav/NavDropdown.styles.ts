@@ -1,7 +1,6 @@
 import { boxShadow, device, variables } from '@/styles/globalStyle';
 import Link from 'next/link';
-import styled from 'styled-components';
-
+import styled from '@emotion/styled';
 interface InavLocation {
   navLocation: {
     left: number;

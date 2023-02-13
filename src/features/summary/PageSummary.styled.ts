@@ -1,5 +1,5 @@
 import { device, variables } from '@/styles/globalStyle';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { IpageSummary } from './PageSummary';
 
 export const PageSummaryContainer = styled.article<IpageSummary>`

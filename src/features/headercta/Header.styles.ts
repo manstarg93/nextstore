@@ -1,35 +1,36 @@
 import Button from '@/components/button/Button';
 import { ButtonContainer } from '@/components/button/Button.styled';
 import { device, variables } from '@/styles/globalStyle';
-import Image from 'next/image';
-import styled from 'styled-components';
-
-interface IHeaderStyles {}
+import Image, { StaticImageData } from 'next/image';
+import styled from '@emotion/styled';
+interface IHeaderStyles {
+  backGroundImage: StaticImageData;
+}
 
 export const HeaderContainer = styled.div<IHeaderStyles>`
   width: 100%;
   display: grid;
   position: relative;
   overflow: hidden;
-  height: 60vh;
+  height: 500px;
   padding: 1rem;
-  margin-top: 50px;
+  background-image: ${(props) => `url(${props.backGroundImage.src})`};
   grid-row: 1/2;
   align-items: center;
   background-color: ${variables.darkGray};
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
-export const HeaderOverlay = styled(Image)`
+export const HeaderOverlay = styled.div`
   position: absolute;
   filter: brightness(50%);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  background-color: ${variables.darkGray};
+  opacity: 0.5;
 `;
 
 export const HeaderDescription = styled.div`

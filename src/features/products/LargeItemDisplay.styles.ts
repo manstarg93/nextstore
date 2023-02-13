@@ -1,7 +1,6 @@
 import { device } from '@/styles/globalStyle';
 
-import styled from 'styled-components';
-
+import styled from '@emotion/styled';
 interface ILargeItem {
   gridRow?: string;
   gridColumn?: string;

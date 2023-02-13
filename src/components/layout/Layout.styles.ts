@@ -1,20 +1,21 @@
-import { device, variables } from '@/styles/globalStyle';
-import styled from 'styled-components';
-
+import styled from '@emotion/styled';
 interface ILayoutStyles {
   mediumWidth?: boolean;
 }
 
 export const LayoutMain = styled.section<ILayoutStyles>`
-  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 3rem;
 `;
 
-export const FooterContainer = styled.footer``;
-
 export const PageSectionContainer = styled.section<ILayoutStyles>`
-  margin: 0 auto;
+  display: grid;
+  grid-row: 2/3;
 
-  width: 95%;
-  @media screen and (min-width: ${device.laptop}) {
-  }
+  grid-gap: 3rem;
+`;
+
+export const FooterContainer = styled.footer`
+  grid-row: 3/4;
 `;
