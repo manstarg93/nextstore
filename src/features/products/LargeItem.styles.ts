@@ -7,7 +7,7 @@ export const LargeItemContainer = styled.div`
   overflow: hidden;
   cursor: pointer;
   position: relative;
-
+  width: max-content;
   display: grid;
 
   @media screen and (min-width: ${device.laptop}) {

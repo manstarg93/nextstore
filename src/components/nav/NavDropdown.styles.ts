@@ -43,6 +43,7 @@ export const NavDropDownLink = styled(Link)`
   color: ${variables.darkGray};
   padding: 1rem 2rem;
   text-align: start;
+  font-size: 1.4rem;
 `;
 
 export const UpArrowContainer = styled.div<InavLocation>`

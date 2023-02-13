@@ -11,9 +11,10 @@ import {
   setDropDownOptions,
   toggleDropDownFilter,
 } from '@/features/store/uiSlice';
+import { dropDownFilterType } from './productFilterTypes';
 
 interface IProductFilter {
-  dropDownFilter: { title: string }[];
+  dropDownFilter: dropDownFilterType;
 }
 
 const ProductFilter = ({ dropDownFilter }: IProductFilter) => {

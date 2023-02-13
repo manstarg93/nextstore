@@ -6,13 +6,14 @@ export const ProductDisplayContainer = styled.div`
   display: grid;
 
   cursor: pointer;
-
-  @media screen and (min-width: ${device.laptop}) {
-  }
 `;
 
 export const ProductImageContainer = styled.div`
   position: relative;
+  display: grid;
+  justify-content: center;
+
+  margin: 0 auto;
 `;
 
 export const TitleCTA = styled.h3`
@@ -31,19 +32,23 @@ export const TitleCTA = styled.h3`
 export const ProductImage = styled(Image)`
   object-fit: cover;
   transition: all 0.3s linear;
-  aspect-ratio: attr(width) / attr(height);
+
   filter: brightness(60%);
   will-change: transform;
 
   &:hover {
     transform: scale(1.03);
   }
+  @media screen and (min-width: ${device.laptop}) {
+  }
 `;
 
 export const CaptionContainer = styled.div`
   display: grid;
   grid-gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 0;
+
+  width: 100%;
 `;
 
 export const RatingContainer = styled.div`

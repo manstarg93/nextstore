@@ -25,16 +25,17 @@ export const ProjectGridItemContainer = styled.div`
   display: grid;
 
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
+
   overflow: hidden;
   justify-content: center;
   align-items: center;
-
+  grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
   width: 100%;
 
   transition: all 0.4s linear;
 
   @media screen and (min-width: ${device.laptop}) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
   }
 `;
 

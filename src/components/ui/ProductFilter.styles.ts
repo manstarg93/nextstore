@@ -1,4 +1,4 @@
-import { variables } from '@/styles/globalStyle';
+import { device, variables } from '@/styles/globalStyle';
 import styled from '@emotion/styled';
 interface IDropdownFilter {
   isDropDownFilter: boolean;
@@ -6,9 +6,14 @@ interface IDropdownFilter {
 
 export const ProductFilterContainer = styled.div`
   position: relative;
-
+  width: 90%;
+  margin: 0 auto;
   z-index: 9;
   background-color: ${variables.white};
+
+  @media screen and (min-width: ${device.laptop}) {
+    width: 50%;
+  }
 `;
 
 export const ProductFilterDropDown = styled.div`

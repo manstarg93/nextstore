@@ -28,28 +28,27 @@ const ProductDisplay = ({
         {staticTitle && <TitleCTA>{staticTitle}</TitleCTA>}
         <ProductImage
           src={thumbnail}
-          width={400}
-          height={500}
+          width={300}
+          height={400}
           alt={title ? title : 'alt placeholder'}
         />
+        {title && (
+          <CaptionContainer>
+            <TitleAndPriceContainer>
+              <ProductDescriptionAndPrice>{title}</ProductDescriptionAndPrice>
+              <ProductDescriptionAndPrice>${price}</ProductDescriptionAndPrice>
+              <RatingContainer>
+                {rating &&
+                  Array<number>(Math.round(rating))
+                    .fill(0)
+                    .map((rat, i) => {
+                      return <AiFillStar key={i} />;
+                    })}
+              </RatingContainer>
+            </TitleAndPriceContainer>
+          </CaptionContainer>
+        )}
       </ProductImageContainer>
-
-      {title && (
-        <CaptionContainer>
-          <TitleAndPriceContainer>
-            <ProductDescriptionAndPrice>{title}</ProductDescriptionAndPrice>
-            <ProductDescriptionAndPrice>${price}</ProductDescriptionAndPrice>
-            <RatingContainer>
-              {rating &&
-                Array<number>(Math.round(rating))
-                  .fill(0)
-                  .map((rat, i) => {
-                    return <AiFillStar key={i} />;
-                  })}
-            </RatingContainer>
-          </TitleAndPriceContainer>
-        </CaptionContainer>
-      )}
     </ProductDisplayContainer>
   );
 };

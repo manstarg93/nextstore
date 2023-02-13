@@ -9,7 +9,8 @@ interface ILargeItem {
 export const LargeItemDisplayContainer = styled.div<ILargeItem>`
   display: grid;
   overflow: hidden;
-  grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
 
   grid-column: ${(props) => (props.gridColumn ? props.gridColumn : 'auto')};
   grid-row: ${(props) => (props.gridRow ? props.gridRow : 'auto')};

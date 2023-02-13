@@ -9,6 +9,8 @@ import { GrNext, GrPrevious } from 'react-icons/gr';
 import { IProducts } from '../../components/types/productTypes';
 import { useAppDispatch } from '@/hooks/reduxHooks';
 import { nextPhoneIndex, prevPhoneIndex } from '@/features/store/uiSlice';
+import { dropDownFilterType } from '@/components/ui/productFilterTypes';
+import ProductFilter from '@/components/ui/ProductFilter';
 
 interface IprojectGrid {
   children: React.ReactNode;

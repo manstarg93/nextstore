@@ -1,3 +1,5 @@
+import { title } from 'process';
+
 export const mensDropdown = [
   { title: 'all' },
   { title: 'mens shirt' },
@@ -11,3 +13,8 @@ export const womensDropdown = [
   { title: 'womens shoes' },
   { title: 'womens watches' },
 ];
+
+export type dropDownFilterType =
+  | {
+      title: string;
+    }[];
