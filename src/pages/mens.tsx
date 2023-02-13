@@ -19,8 +19,6 @@ interface IMens {
 }
 
 export default function Mens({ mensShirt, mensShoes, mensWatches }: IMens) {
-  useResetProductDropdown();
-
   const { productFilterOption } = useAppSelector((state) => state.ui);
 
   return (

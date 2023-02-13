@@ -14,9 +14,9 @@ export const navData = [
     dropdownData: {
       title: 'shop men',
       dropDown: [
-        { title: 'mens-shirt', link: '/mens-shirt' },
-        { title: 'mens-shoes', link: '/mens-shoes' },
-        { title: 'mens-watch', link: '/mens-watch' },
+        { title: 'mens shirt', link: '/mens' },
+        { title: 'mens shoes', link: '/mens' },
+        { title: 'mens watches', link: '/mens' },
       ],
     },
   },
@@ -26,9 +26,9 @@ export const navData = [
     dropdownData: {
       title: 'shop women',
       dropDown: [
-        { title: 'womens-dress', link: '/womens-dress' },
-        { title: 'womens-shoes', link: '/womens-shoes' },
-        { title: 'womens-watch', link: '/womens-watch' },
+        { title: 'womens dress', link: '/womens' },
+        { title: 'womens shoes', link: '/womens' },
+        { title: 'womens watches', link: '/womens' },
       ],
     },
   },

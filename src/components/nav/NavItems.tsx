@@ -23,6 +23,7 @@ import {
 import NavDropdown from './NavDropdown';
 import { useEffect, useState } from 'react';
 import { useWindowSize } from '@/hooks/windowSizeHook';
+import { useResetProductDropdown } from '@/hooks/resetProductDropDown';
 
 interface INavData {
   data: navDataType;
@@ -33,6 +34,7 @@ const NavItems = ({ data }: INavData) => {
   const { isShowSideBar, dropdownTitle } = useAppSelector((state) => state.ui);
 
   const { windowSize } = useWindowSize();
+  const { resetProductDropDown } = useResetProductDropdown();
   const showDropdownHandler = (
     dropdownTitle: string,
     e: React.MouseEvent<HTMLDivElement>
@@ -80,7 +82,7 @@ const NavItems = ({ data }: INavData) => {
                 <NavItem>
                   <NavItemLink
                     href={item.link}
-                    onClick={() => dispatch(hideSideBar())}
+                    onClick={() => resetProductDropDown()}
                   >
                     {item.title}
                   </NavItemLink>

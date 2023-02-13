@@ -1,4 +1,8 @@
-import { hideDropDown } from '@/features/store/uiSlice';
+import {
+  hideDropDown,
+  hideSideBar,
+  setDropDownOptions,
+} from '@/features/store/uiSlice';
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
 import {
   NavDropDownContainer,
@@ -9,6 +13,7 @@ import {
 
 import { BiUpArrow } from 'react-icons/bi';
 import { IDropdownTypes } from './navData';
+import { useRouter } from 'next/router';
 
 interface IDropdown {
   title: string;
@@ -18,6 +23,16 @@ interface IDropdown {
 const NavDropdown = ({ title, dropDownData }: IDropdown) => {
   const dispatch = useAppDispatch();
   const { isShowDropdown, navLocation } = useAppSelector((state) => state.ui);
+  const router = useRouter();
+
+  const goToDropDownLinkHandler = (item: { title: string; link: string }) => {
+    const { title, link } = item;
+
+    dispatch(setDropDownOptions(title));
+    dispatch(hideDropDown());
+    dispatch(hideSideBar());
+    router.push(link);
+  };
 
   if (dropDownData?.title === title) {
     return (
@@ -29,7 +44,7 @@ const NavDropdown = ({ title, dropDownData }: IDropdown) => {
           {dropDownData.dropDown.map((item) => {
             return (
               <NavDropDownLink
-                onClick={() => dispatch(hideDropDown())}
+                onClick={() => goToDropDownLinkHandler(item)}
                 key={item.title}
                 href={item.link}
               >

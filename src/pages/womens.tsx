@@ -29,7 +29,6 @@ export default function Womens({
   womensShoes,
   womensWatches,
 }: IWomens) {
-  useResetProductDropdown();
   const { productFilterOption } = useAppSelector((state) => state.ui);
   return (
     <>

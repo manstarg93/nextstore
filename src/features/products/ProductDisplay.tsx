@@ -30,6 +30,7 @@ const ProductDisplay = ({
           src={thumbnail}
           width={300}
           height={400}
+          priority={true}
           alt={title ? title : 'alt placeholder'}
         />
         {title && (
