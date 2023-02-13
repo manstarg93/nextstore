@@ -1,36 +1,32 @@
 import Button from '@/components/button/Button';
 import { ButtonContainer } from '@/components/button/Button.styled';
 import { device, variables } from '@/styles/globalStyle';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import styled from '@emotion/styled';
-interface IHeaderStyles {
-  backGroundImage: StaticImageData;
-}
 
-export const HeaderContainer = styled.div<IHeaderStyles>`
+export const HeaderContainer = styled.div`
   width: 100%;
   display: grid;
   position: relative;
   overflow: hidden;
-  height: 500px;
+  height: 70vh;
   padding: 1rem;
-  background-image: ${(props) => `url(${props.backGroundImage.src})`};
+
   grid-row: 1/2;
   align-items: center;
   background-color: ${variables.darkGray};
-  background-size: cover;
-  background-repeat: no-repeat;
 `;
 
-export const HeaderOverlay = styled.div`
+export const HeaderOverlay = styled(Image)`
   position: absolute;
   filter: brightness(50%);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${variables.darkGray};
-  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const HeaderDescription = styled.div`
@@ -48,14 +44,6 @@ export const HeaderDescription = styled.div`
   }
   @media screen and (min-width: ${device.laptop}) {
     max-width: 50%;
-  }
-`;
-
-export const HeaderImageContainer = styled.div`
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
   }
 `;
 
