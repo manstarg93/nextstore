@@ -55,26 +55,36 @@ export const largeItemHandler = (
       description: 'Comfortable on her legs',
       image: extractSingleImage(product1, 3),
       link: '/womens',
+      title: 'womens shoes',
     },
     {
       id: 2,
       description: 'Stylish mens footwear',
       image: extractSingleImage(product2, 0),
       link: '/mens',
+      title: 'mens shoes',
     },
     {
       id: 3,
       description: 'Keep skin feeling fresh',
       image: extractSingleImage(product3, 3),
       link: '/fragrances',
+      title: 'fragrances',
     },
     {
       id: 4,
       description: 'tell the time with style',
       image: extractSingleImage(product4, 3),
       link: '/mens',
+      title: 'mens watches',
     },
   ];
 
   return largeItems;
+};
+
+export const productItems = (product: IProducts[]) => {};
+
+export const productLink = (productId: number) => {
+  return `/products/${productId.toString()}`;
 };

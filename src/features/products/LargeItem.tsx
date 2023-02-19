@@ -7,15 +7,18 @@ import {
 } from './LargeItem.styles';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useAppDispatch } from '@/hooks/reduxHooks';
+import { setDropDownOptions } from '../store/uiSlice';
 interface ILargeItems {
   description: string;
   image: string;
   id: number;
   link: string;
+  title: string;
 }
 
-const LargeItem = ({ description, id, image, link }: ILargeItems) => {
-  const route = useRouter();
+const LargeItem = ({ description, id, image, link, title }: ILargeItems) => {
+  const dispatch = useAppDispatch();
   return (
     <LargeItemContainer>
       <LargeItemImage
@@ -26,7 +29,11 @@ const LargeItem = ({ description, id, image, link }: ILargeItems) => {
       />
       <LargeItemDescriptionAndButton>
         <LargeItemDescription>{description}</LargeItemDescription>
-        <Link href={`${link}`} scroll={true}>
+        <Link
+          onClick={() => dispatch(setDropDownOptions(title))}
+          href={`${link}`}
+          scroll={true}
+        >
           <LargeItemButton>Shop Now</LargeItemButton>
         </Link>
       </LargeItemDescriptionAndButton>

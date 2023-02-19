@@ -20,3 +20,13 @@ a {
 a {
   color: #1e252e;
 }
+
+.center {
+  text-align: center;
+  margin: 5rem auto;
+}
+
+.linkBlue {
+  color: blue;
+  font-weight: bold;
+}

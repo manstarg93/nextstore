@@ -18,7 +18,6 @@ const Header = () => {
           praesentium? In fuga facilis assumenda repellendus veniam officia quo
           dolore doloremque deleniti cumque.
         </p>
-        <HeaderButton>Shop Now</HeaderButton>
       </HeaderDescription>
 
       <HeaderOverlay priority={true} src={header} alt="header Image" />

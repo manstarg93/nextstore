@@ -27,11 +27,10 @@ const NavDropdown = ({ title, dropDownData }: IDropdown) => {
 
   const goToDropDownLinkHandler = (item: { title: string; link: string }) => {
     const { title, link } = item;
-
+    console.log(title);
     dispatch(setDropDownOptions(title));
     dispatch(hideDropDown());
     dispatch(hideSideBar());
-    router.push(link);
   };
 
   if (dropDownData?.title === title) {

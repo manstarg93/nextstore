@@ -1,5 +1,25 @@
-import { IProducts } from '@/components/types/productTypes';
+import { IProduct, IProducts } from '@/components/types/productTypes';
 import axios from 'axios';
+
+export const getSingleProduct = async (id: string | string[] | undefined) => {
+  const { data } = await axios
+    .get<IProduct>(` https://dummyjson.com/products/${id}`)
+    .then((res) => res)
+    .catch((err) => err);
+
+  return data;
+};
+
+export const getAllProducts = async () => {
+  const { data } = await axios
+    .get<IProducts>(` https://dummyjson.com/products?limit=0`)
+    .then((res) => {
+      return res;
+    })
+    .catch((err) => err);
+
+  return data.products;
+};
 
 export const getMensWatches = async () => {
   const { data } = await axios

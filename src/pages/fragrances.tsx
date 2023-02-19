@@ -6,6 +6,7 @@ import ProductsHeader from '@/features/headercta/ProductsHeader';
 import ProductDisplay from '@/features/products/ProductDisplay';
 import { getFragrances, getSkincare } from '@/lib/fetchData';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
+import { productLink } from '@/features/products/productHelperFunction';
 
 interface IWomens {
   fragrances: IProducts;
@@ -25,7 +26,7 @@ export default function Skincare({ fragrances }: IWomens) {
             <ProductDisplay
               {...product}
               key={product.id}
-              link={`/products/${product.title}`}
+              link={productLink(product.id)}
             />
           ))}
         </ProductGrid>

@@ -11,6 +11,7 @@ import { useResetProductDropdown } from '@/hooks/resetProductDropDown';
 
 import { getMensShirt, getMensShoes, getMensWatches } from '@/lib/fetchData';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
+import { productLink } from '@/features/products/productHelperFunction';
 
 interface IMens {
   mensShirt: IProducts;
@@ -20,7 +21,9 @@ interface IMens {
 
 export default function Mens({ mensShirt, mensShoes, mensWatches }: IMens) {
   const { productFilterOption } = useAppSelector((state) => state.ui);
+  console.log(mensShirt);
 
+  const productList = (products: IProducts) => {};
   return (
     <>
       <HeadComponent />
@@ -33,33 +36,19 @@ export default function Mens({ mensShirt, mensShoes, mensWatches }: IMens) {
 
         {productFilterOption === 'all' && (
           <>
-            <ProductGrid products={mensShirt}>
-              {mensShirt?.map((product) => (
-                <ProductDisplay
-                  {...product}
-                  key={product.id}
-                  link={`/products/${product.title}`}
-                />
-              ))}
-            </ProductGrid>
-            <ProductGrid products={mensShoes}>
-              {mensShoes?.map((product) => (
-                <ProductDisplay
-                  {...product}
-                  key={product.id}
-                  link={`/products/${product.title}`}
-                />
-              ))}
-            </ProductGrid>
-            <ProductGrid products={mensWatches}>
-              {mensWatches?.map((product) => (
-                <ProductDisplay
-                  {...product}
-                  key={product.id}
-                  link={`/products/${product.title}`}
-                />
-              ))}
-            </ProductGrid>
+            {[mensShirt, mensShoes, mensWatches].map((mensProduct, index) => {
+              return (
+                <ProductGrid key={index} products={mensProduct}>
+                  {mensProduct?.map((product) => (
+                    <ProductDisplay
+                      {...product}
+                      key={product.id}
+                      link={productLink(product.id)}
+                    />
+                  ))}
+                </ProductGrid>
+              );
+            })}
           </>
         )}
 
@@ -69,7 +58,7 @@ export default function Mens({ mensShirt, mensShoes, mensWatches }: IMens) {
               <ProductDisplay
                 {...product}
                 key={product.id}
-                link={`/products/${product.title}`}
+                link={productLink(product.id)}
               />
             ))}
           </ProductGrid>
@@ -81,7 +70,7 @@ export default function Mens({ mensShirt, mensShoes, mensWatches }: IMens) {
               <ProductDisplay
                 {...product}
                 key={product.id}
-                link={`/products/${product.title}`}
+                link={productLink(product.id)}
               />
             ))}
           </ProductGrid>
@@ -93,7 +82,7 @@ export default function Mens({ mensShirt, mensShoes, mensWatches }: IMens) {
               <ProductDisplay
                 {...product}
                 key={product.id}
-                link={`/products/${product.title}`}
+                link={productLink(product.id)}
               />
             ))}
           </ProductGrid>

@@ -22,7 +22,9 @@ const ProductDisplay = ({
   link,
 }: IProductDisplay) => {
   const router = useRouter();
+
   return (
+    
     <ProductDisplayContainer onClick={() => router.push(`${link}`)}>
       <ProductImageContainer>
         {staticTitle && <TitleCTA>{staticTitle}</TitleCTA>}
@@ -30,7 +32,7 @@ const ProductDisplay = ({
           src={thumbnail}
           width={300}
           height={400}
-          priority={true}
+          priority={router.pathname !== '/' && true}
           alt={title ? title : 'alt placeholder'}
         />
         {title && (

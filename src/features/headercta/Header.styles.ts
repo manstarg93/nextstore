@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
   display: grid;
   position: relative;
   overflow: hidden;
-  height: 70vh;
+  height: 60vh;
   padding: 1rem;
 
   grid-row: 1/2;

@@ -31,9 +31,7 @@ export const NavDropDownContainer = styled.div<IdropdowStyles>`
 `;
 
 export const NavDropDownItemsContainer = styled.ul`
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
 
   align-items: center;
 `;
@@ -42,8 +40,6 @@ export const NavDropDownLink = styled(Link)`
   text-transform: capitalize;
   color: ${variables.darkGray};
   padding: 1rem 2rem;
-  text-align: start;
-  font-size: 1.2rem;
 `;
 
 export const UpArrowContainer = styled.div<InavLocation>`

@@ -17,6 +17,7 @@ import {
 } from '@/lib/fetchData';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
+import { productLink } from '@/features/products/productHelperFunction';
 
 interface IWomens {
   womensDress: IProducts;
@@ -42,33 +43,21 @@ export default function Womens({
 
         {productFilterOption === 'all' && (
           <>
-            <ProductGrid products={womensDress}>
-              {womensDress?.map((product) => (
-                <ProductDisplay
-                  {...product}
-                  key={product.id}
-                  link={`/products/${product.title}`}
-                />
-              ))}
-            </ProductGrid>
-            <ProductGrid products={womensWatches}>
-              {womensWatches?.map((product) => (
-                <ProductDisplay
-                  {...product}
-                  key={product.id}
-                  link={`/products/${product.title}`}
-                />
-              ))}
-            </ProductGrid>
-            <ProductGrid products={womensShoes}>
-              {womensShoes?.map((product) => (
-                <ProductDisplay
-                  {...product}
-                  key={product.id}
-                  link={`/products/${product.title}`}
-                />
-              ))}
-            </ProductGrid>
+            {[womensDress, womensShoes, womensWatches].map(
+              (womensProduct, index) => {
+                return (
+                  <ProductGrid key={index} products={womensProduct}>
+                    {womensProduct?.map((product) => (
+                      <ProductDisplay
+                        {...product}
+                        key={product.id}
+                        link={productLink(product.id)}
+                      />
+                    ))}
+                  </ProductGrid>
+                );
+              }
+            )}
           </>
         )}
         {productFilterOption === 'womens dress' && (
@@ -77,7 +66,7 @@ export default function Womens({
               <ProductDisplay
                 {...product}
                 key={product.id}
-                link={`/products/${product.title}`}
+                link={productLink(product.id)}
               />
             ))}
           </ProductGrid>
@@ -88,7 +77,7 @@ export default function Womens({
               <ProductDisplay
                 {...product}
                 key={product.id}
-                link={`/products/${product.title}`}
+                link={productLink(product.id)}
               />
             ))}
           </ProductGrid>
@@ -99,7 +88,7 @@ export default function Womens({
               <ProductDisplay
                 {...product}
                 key={product.id}
-                link={`/products/${product.title}`}
+                link={productLink(product.id)}
               />
             ))}
           </ProductGrid>

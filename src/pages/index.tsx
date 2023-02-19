@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import {
+  getAllProducts,
   getFragrances,
   getMensShirt,
   getMensShoes,
@@ -8,7 +9,6 @@ import {
   getSkincare,
   getWomensDress,
   getWomensShoes,
-  getWomensWatches,
 } from '@/lib/fetchData';
 
 import Layout from '../components/layout/Layout';
@@ -25,6 +25,7 @@ const ProductGrid = dynamic(() => import('@/features/products/ProductGrid'));
 
 import {
   largeItemHandler,
+  productLink,
   productPreviewHandler,
 } from '@/features/products/productHelperFunction';
 
@@ -40,7 +41,6 @@ interface Iindex {
   mensWatches: IProducts;
   womensDress: IProducts;
   womensShoes: IProducts;
-  womensWatches: IProducts;
   skinCare: IProducts;
   fragrances: IProducts;
 }
@@ -51,7 +51,7 @@ export default function Home({
   mensWatches,
   womensDress,
   womensShoes,
-  womensWatches,
+
   skinCare,
   fragrances,
 }: Iindex) {
@@ -94,7 +94,7 @@ export default function Home({
               <ProductDisplay
                 key={product.id}
                 {...product}
-                link={`/products/${product.title}`}
+                link={productLink(product.id)}
               />
             );
           })}
@@ -113,9 +113,10 @@ export const getStaticProps: GetStaticProps = async (
   const mensWatches = await getMensWatches();
   const womensDress = await getWomensDress();
   const womensShoes = await getWomensShoes();
-  const womensWatches = await getWomensWatches();
+
   const skinCare = await getSkincare();
   const fragrances = await getFragrances();
+  const allProducts = await getAllProducts();
 
   return {
     props: {
@@ -124,9 +125,10 @@ export const getStaticProps: GetStaticProps = async (
       mensWatches,
       womensDress,
       womensShoes,
-      womensWatches,
+
       skinCare,
       fragrances,
+      allProducts,
     },
   };
 };
