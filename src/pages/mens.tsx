@@ -21,9 +21,7 @@ interface IMens {
 
 export default function Mens({ mensShirt, mensShoes, mensWatches }: IMens) {
   const { productFilterOption } = useAppSelector((state) => state.ui);
-  console.log(mensShirt);
 
-  const productList = (products: IProducts) => {};
   return (
     <>
       <HeadComponent />

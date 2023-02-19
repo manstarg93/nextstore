@@ -6,15 +6,14 @@ import Image from 'next/image';
 
 export const SelectedProductContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+  padding: 0 1rem;
   grid-gap: 1rem;
   justify-content: center;
 
-  margin: 0 auto;
-
-  @media screen and (min-width: ${device.laptop}) {
+  @media screen and (min-width: ${device.tablet}) {
     width: 95%;
     justify-content: space-around;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
   }
 `;
 
@@ -22,8 +21,7 @@ export const SelectedProductImagesContainer = styled.div`
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: auto 1fr;
-  box-shadow: ${boxShadow(variables.gray)};
-  padding: 1rem;
+  overflow: hidden;
 `;
 
 export const ImageContainer = styled.div`
@@ -38,6 +36,7 @@ export const SelectedProductThumbNailsContainer = styled.div`
   padding: 1rem 0;
   grid-gap: 1rem;
   justify-content: center;
+
   width: 100%;
 `;
 

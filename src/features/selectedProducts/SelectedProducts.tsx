@@ -2,7 +2,8 @@ import Button from '@/components/button/Button';
 import { IProduct } from '@/components/types/productTypes';
 import { useState } from 'react';
 
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlineMinus, AiOutlinePlus, AiFillStar } from 'react-icons/ai';
+import { RatingContainer } from '../products/ProductDisplay.styled';
 import {
   AddToCartButton,
   AvailableIcon,
@@ -25,8 +26,17 @@ interface ISelectProducts {
   selectedProduct: IProduct;
 }
 const SelectedProducts = ({ selectedProduct }: ISelectProducts) => {
-  const { thumbnail, title, id, images, brand, price, description, stock } =
-    selectedProduct;
+  const {
+    thumbnail,
+    title,
+    id,
+    images,
+    brand,
+    price,
+    description,
+    stock,
+    rating,
+  } = selectedProduct;
 
   const [selectedImage, setSelectedImage] = useState<string>(
     images.slice(0, 1).join('')
@@ -54,7 +64,7 @@ const SelectedProducts = ({ selectedProduct }: ISelectProducts) => {
         </SelectedProductThumbNailsContainer>
         <ImageContainer>
           <SelectedProductImage
-            width={350}
+            width={300}
             height={350}
             priority={true}
             alt={title}
@@ -72,6 +82,17 @@ const SelectedProducts = ({ selectedProduct }: ISelectProducts) => {
         <FeaturesContainer>
           <BrandTitle>{brand}</BrandTitle>
           <p>{description}</p>
+        </FeaturesContainer>
+
+        <FeaturesContainer>
+          <RatingContainer>
+            {rating &&
+              Array<number>(Math.round(rating))
+                .fill(0)
+                .map((rat, i) => {
+                  return <AiFillStar key={i} />;
+                })}
+          </RatingContainer>
         </FeaturesContainer>
         <FeaturesContainer>
           <p>

@@ -12,7 +12,7 @@ export const ProductImageContainer = styled.div`
   position: relative;
   display: grid;
   justify-content: center;
-
+  overflow: hidden;
   margin: 0 auto;
 `;
 
