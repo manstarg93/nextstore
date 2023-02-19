@@ -5,13 +5,12 @@ import Image from 'next/image';
 import styled from '@emotion/styled';
 
 export const HeaderContainer = styled.div`
-  width: 100%;
   display: grid;
   position: relative;
-  overflow: hidden;
-  height: 60vh;
+  height: 500px;
+  margin: 0 auto;
   padding: 1rem;
-
+  overflow: hidden;
   grid-row: 1/2;
   align-items: center;
   background-color: ${variables.darkGray};
@@ -25,7 +24,6 @@ export const HeaderOverlay = styled(Image)`
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 `;
 

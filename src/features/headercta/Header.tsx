@@ -20,7 +20,13 @@ const Header = () => {
         </p>
       </HeaderDescription>
 
-      <HeaderOverlay priority={true} src={header} alt="header Image" />
+      <HeaderOverlay
+        priority={true}
+        src={header}
+        alt="header Image"
+        width={1500}
+        height={500}
+      />
     </HeaderContainer>
   );
 };
