@@ -13,10 +13,6 @@ import {
 
 import Layout from '../components/layout/Layout';
 
-const LargeItemDisplay = dynamic(
-  () => import('../features/products/LargeItemDisplay')
-);
-
 const ProductDisplay = dynamic(
   () => import('../features/products/ProductDisplay')
 );
@@ -29,7 +25,7 @@ import {
   productPreviewHandler,
 } from '@/features/products/productHelperFunction';
 
-const LargeItem = dynamic(() => import('../features/products/LargeItem'));
+const LargeItem = dynamic(() => import('../components/cta/LargeItem'));
 import PageSummary from '@/features/summary/PageSummary';
 import Header from '@/features/headercta/Header';
 import dynamic from 'next/dynamic';
@@ -74,16 +70,10 @@ export default function Home({
             return <ProductDisplay key={product.id} {...product} />;
           })}
         </ProductGrid>
-        <LargeItemDisplay gridRow="3/4">
-          {largeItemHandler(
-            womensShoes,
-            mensShoes,
-            fragrances,
-            mensWatches
-          ).map((product) => {
-            return <LargeItem key={product.id} {...product} />;
-          })}
-        </LargeItemDisplay>
+        <LargeItem
+          link="/fragrances"
+          description="Long lasting refreshing memories of a simple fresh dream."
+        />
         <ProductGrid
           gridRow="4/5"
           title={'latest skincare products'}

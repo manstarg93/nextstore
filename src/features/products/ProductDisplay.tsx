@@ -24,7 +24,6 @@ const ProductDisplay = ({
   const router = useRouter();
 
   return (
-    
     <ProductDisplayContainer onClick={() => router.push(`${link}`)}>
       <ProductImageContainer>
         {staticTitle && <TitleCTA>{staticTitle}</TitleCTA>}
@@ -35,23 +34,23 @@ const ProductDisplay = ({
           priority={router.pathname !== '/' && true}
           alt={title ? title : 'alt placeholder'}
         />
-        {title && (
-          <CaptionContainer>
-            <TitleAndPriceContainer>
-              <ProductDescriptionAndPrice>{title}</ProductDescriptionAndPrice>
-              <ProductDescriptionAndPrice>${price}</ProductDescriptionAndPrice>
-              <RatingContainer>
-                {rating &&
-                  Array<number>(Math.round(rating))
-                    .fill(0)
-                    .map((rat, i) => {
-                      return <AiFillStar key={i} />;
-                    })}
-              </RatingContainer>
-            </TitleAndPriceContainer>
-          </CaptionContainer>
-        )}
       </ProductImageContainer>
+      {title && (
+        <CaptionContainer>
+          <TitleAndPriceContainer>
+            <ProductDescriptionAndPrice>{title}</ProductDescriptionAndPrice>
+            <ProductDescriptionAndPrice>${price}</ProductDescriptionAndPrice>
+            <RatingContainer>
+              {rating &&
+                Array<number>(Math.round(rating))
+                  .fill(0)
+                  .map((rat, i) => {
+                    return <AiFillStar key={i} />;
+                  })}
+            </RatingContainer>
+          </TitleAndPriceContainer>
+        </CaptionContainer>
+      )}
     </ProductDisplayContainer>
   );
 };

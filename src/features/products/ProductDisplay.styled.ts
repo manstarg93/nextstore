@@ -11,9 +11,8 @@ export const ProductDisplayContainer = styled.div`
 export const ProductImageContainer = styled.div`
   position: relative;
   display: grid;
-  justify-content: center;
+
   overflow: hidden;
-  margin: 0 auto;
 `;
 
 export const TitleCTA = styled.h3`
@@ -59,7 +58,6 @@ export const RatingContainer = styled.div`
 
 export const TitleAndPriceContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr min-content;
 
   justify-content: space-between;
   width: 100%;

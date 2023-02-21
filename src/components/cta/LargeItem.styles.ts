@@ -7,9 +7,10 @@ export const LargeItemContainer = styled.div`
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  width: max-content;
+  width: 100%;
   display: grid;
-
+  height: 400px;
+  background-color: ${variables.darkGray};
   @media screen and (min-width: ${device.laptop}) {
   }
 `;
@@ -18,6 +19,9 @@ export const LargeItemImage = styled(Image)`
   object-fit: cover;
   transition: all 0.3s linear;
 
+  position: absolute;
+  height: 100%;
+  width: 100%;
   filter: brightness(60%);
   will-change: transform;
   &:hover {
@@ -27,10 +31,11 @@ export const LargeItemImage = styled(Image)`
 
 export const LargeItemDescriptionAndButton = styled.div`
   position: absolute;
-  top: 50%;
+  top: 40%;
 
   left: 50%;
-  transform: translate(-50%, 50%);
+
+  transform: translate(-50%, 40%);
   display: grid;
   grid-gap: 1rem;
   align-items: flex-end;
