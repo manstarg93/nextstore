@@ -9,6 +9,7 @@ export const LargeItemContainer = styled.div`
   position: relative;
   width: 100%;
   display: grid;
+
   height: 400px;
   background-color: ${variables.darkGray};
   @media screen and (min-width: ${device.laptop}) {
@@ -31,14 +32,15 @@ export const LargeItemImage = styled(Image)`
 
 export const LargeItemDescriptionAndButton = styled.div`
   position: absolute;
-  top: 40%;
-
+  top: 50%;
   left: 50%;
+  margin: 0 auto;
+  transform: translate(-50%, -50%);
+  width: 80%;
 
-  transform: translate(-50%, 40%);
   display: grid;
   grid-gap: 1rem;
-  align-items: flex-end;
+
   padding: 1rem;
   justify-items: center;
 `;
@@ -47,7 +49,8 @@ export const LargeItemDescription = styled.h4`
   color: ${variables.white};
   text-transform: uppercase;
   font-weight: lighter;
-  width: max-content;
+  width: 100%;
+  text-align: center;
 `;
 
 export const LargeItemButton = styled(Button)`
