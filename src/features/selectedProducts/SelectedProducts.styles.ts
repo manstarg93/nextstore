@@ -120,4 +120,5 @@ export const AvailableIcon = styled.span`
 export const AddToCartButton = styled(ButtonContainer)`
   border: solid 0.1rem ${variables.black};
   width: 100%;
+  color: ${variables.black};
 `;
