@@ -1,5 +1,5 @@
 import uiSlice, { hideDropDown, showSideBar } from '@/features/store/uiSlice';
-import { useAppDispatch } from '@/hooks/reduxHooks';
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
 import { BsCart } from 'react-icons/bs';
 import { navData } from './navData';
 
@@ -15,12 +15,12 @@ import {
 import NavItems from './NavItems';
 import { HiOutlineMenuAlt1 } from 'react-icons/hi';
 import Link from 'next/link';
-import { useState } from 'react';
+import { showCart } from '@/features/store/cartSlice';
 
 const Navigation = () => {
   const dispatch = useAppDispatch();
-  const [winndowTop, setWindowTop] = useState();
 
+  const { cart } = useAppSelector((state) => state.cart);
   return (
     <NavAndDropDownContainer onMouseLeave={() => dispatch(hideDropDown())}>
       <NavContainer>
@@ -32,8 +32,8 @@ const Navigation = () => {
         </NavLogo>
         <NavItems data={navData} />
 
-        <CartIconContainer>
-          <CartCounter>1</CartCounter>
+        <CartIconContainer onClick={() => dispatch(showCart())}>
+          <CartCounter>{cart.length}</CartCounter>
           <BsCart />
         </CartIconContainer>
       </NavContainer>

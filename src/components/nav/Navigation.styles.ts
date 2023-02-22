@@ -62,6 +62,7 @@ export const NavContainer = styled.nav`
 export const NavLogo = styled.h1`
   grid-column: 2/3;
   justify-self: center;
+  font-size: 1.6rem;
 
   @media screen and (min-width: ${device.laptop}) {
     grid-column: 1/2;

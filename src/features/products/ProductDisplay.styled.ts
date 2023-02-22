@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 export const ProductDisplayContainer = styled.div`
   transition: all 0.5s linear;
   display: grid;
-
+  margin: 0 auto;
   cursor: pointer;
 `;
 
@@ -48,12 +48,6 @@ export const CaptionContainer = styled.div`
   padding: 1rem 0;
 
   width: 100%;
-`;
-
-export const RatingContainer = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 `;
 
 export const TitleAndPriceContainer = styled.div`

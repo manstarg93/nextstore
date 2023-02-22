@@ -2,8 +2,10 @@ import Button from '@/components/button/Button';
 import { IProduct } from '@/components/types/productTypes';
 import { useState } from 'react';
 
-import { AiOutlineMinus, AiOutlinePlus, AiFillStar } from 'react-icons/ai';
-import { RatingContainer } from '../products/ProductDisplay.styled';
+import { AiFillStar } from 'react-icons/ai';
+import { useDispatch } from 'react-redux';
+import { RatingComponent } from '../ratingComponent/RatingComponent';
+import { addToCart } from '../store/cartSlice';
 import {
   AddToCartButton,
   AvailableIcon,
@@ -18,7 +20,6 @@ import {
   SelectedProductImagesContainer,
   SelectedProductThumbNail,
   SelectedProductThumbNailsContainer,
-  Selectionbox,
   TitleAndPrice,
 } from './SelectedProducts.styles';
 
@@ -41,6 +42,8 @@ const SelectedProducts = ({ selectedProduct }: ISelectProducts) => {
   const [selectedImage, setSelectedImage] = useState<string>(
     images.slice(0, 1).join('')
   );
+
+  const dispatch = useDispatch();
 
   const selectImageHandler = (image: string) => {
     setSelectedImage(image);
@@ -85,31 +88,35 @@ const SelectedProducts = ({ selectedProduct }: ISelectProducts) => {
         </FeaturesContainer>
 
         <FeaturesContainer>
-          <RatingContainer>
-            {rating &&
-              Array<number>(Math.round(rating))
-                .fill(0)
-                .map((rat, i) => {
-                  return <AiFillStar key={i} />;
-                })}
-          </RatingContainer>
+          {rating && <RatingComponent rating={rating} />}
         </FeaturesContainer>
         <FeaturesContainer>
           <p>
             <span>{stock}*</span> Products available
           </p>
-          <Selectionbox>
-            <AiOutlineMinus />
-            <p>1</p>
-            <AiOutlinePlus />
-          </Selectionbox>
         </FeaturesContainer>
         <ItemInStockContainer>
           <AvailableIcon />
           <p>In stock ready to ship</p>
         </ItemInStockContainer>
         <FeaturesContainer>
-          <AddToCartButton>ADD TO CART</AddToCartButton>
+          <AddToCartButton
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  id,
+                  image: thumbnail,
+                  price,
+                  stock,
+                  itemAmount: 1,
+                  title,
+                  rating,
+                })
+              )
+            }
+          >
+            ADD TO CART
+          </AddToCartButton>
         </FeaturesContainer>
       </SelectedProductFeatures>
     </SelectedProductContainer>

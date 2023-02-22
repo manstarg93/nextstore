@@ -39,3 +39,15 @@ transform: translate(-50%);
    transform: translate(0%);
 }
 `;
+
+export const slideAnimationleft = keyframes`
+0%{
+ transform: translate(100%);
+}
+50%{
+transform: translate(50%);
+}
+100%{
+   transform: translate(0);
+}
+`;

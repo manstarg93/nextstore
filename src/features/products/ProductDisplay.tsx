@@ -4,7 +4,6 @@ import {
   ProductDisplayContainer,
   ProductImage,
   ProductImageContainer,
-  RatingContainer,
   TitleAndPriceContainer,
   TitleCTA,
 } from './ProductDisplay.styled';
@@ -12,6 +11,7 @@ import { IProductDisplay } from './productDisplayTypes';
 
 import { AiFillStar } from 'react-icons/ai';
 import { useRouter } from 'next/router';
+import { RatingComponent } from '../ratingComponent/RatingComponent';
 const ProductDisplay = ({
   staticTitle,
   id,
@@ -40,14 +40,8 @@ const ProductDisplay = ({
           <TitleAndPriceContainer>
             <ProductDescriptionAndPrice>{title}</ProductDescriptionAndPrice>
             <ProductDescriptionAndPrice>${price}</ProductDescriptionAndPrice>
-            <RatingContainer>
-              {rating &&
-                Array<number>(Math.round(rating))
-                  .fill(0)
-                  .map((rat, i) => {
-                    return <AiFillStar key={i} />;
-                  })}
-            </RatingContainer>
+
+            {rating && <RatingComponent rating={rating} />}
           </TitleAndPriceContainer>
         </CaptionContainer>
       )}
