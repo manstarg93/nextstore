@@ -36,12 +36,12 @@ export const CartHeader = styled.div`
   align-items: center;
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.5rem;
     cursor: pointer;
   }
 `;
