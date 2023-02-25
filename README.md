@@ -1,38 +1,63 @@
+# Link: https://nextstore-topaz.vercel.app/
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## APIS
 
-First, run the development server:
+Data Fetched from : https://dummyjson.com/docs/products
+NEXT JS
+TYPESCRIPT
+EMOTION/STYLED COMPONENT
+REACT-ICONS
+REDUX TOOLKIT
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## About N$xt Store
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next Store is an E-commerce web application that provides users with a list of purchasable fashion products including clothing, fragrances and skincare . Next store was built for my portfolio and ##Learning Purpose
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Website link can be found here https://nextstore-topaz.vercel.app/
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Planning
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The goal of N$xt Store is to have a full understanding of how NextJs works with react, I wanted any web app that I build in the future to not only be super fast but have great SEO also, hense that was the reason why I chosee nextjs because it offers server side rendering out of the box meaning the page contents are already pre rendered on the srver side and made available to thee client and google crawler as soon as possible.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I also wanted the images to load very fast but also only load when they are required to improve loading spead and better user experience.
+
+## Design
+
+In this phase it was important to visualise and have some understanding of how the page will look like and also the functionality.
+When a user visits the page they will be brought to the index page which will have a list of some of the products . The navigation and Ui needed to be clean and easy to access other pages.
+
+# Routes
+
+# Home
+
+# Home > Mens
+
+# Home > Womens
+
+# Home > SkinCare
+
+# Home > Fagrances
+
+# Home > ProductParams > Chekout
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+# Home > Mens
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Problems and Solution
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Problem 1
 
-## Deploy on Vercel
+Understanding how the get static props and static paths works was difficult at first, but reading through the nextjs documention and understanding the best practices helped mee appreciate what they do. they were veery important for Pre rendering the data that was fetched.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Problem 2
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Loading the images using the Image tag instead of the img tag was very frustrating at first because the images wernt been loaded but i was able to eventually resolve this issue by using the documentation and most importantly as weel as google and how other developers fixed the issues.
+
+# Problem 3
+
+Because I use Styled components, I came accross a big problem it had with Next js which is that the styles weree only been loaded on the client side which ended up leading to massive Cummulative Layout Shift because the styles wearn't. The first solution was writing additional boiler plate code and more complicated set ups but it wasnt efficient.
+
+That was when I came accross Emotion.Js, Emotion.Js renders all the styling in the server just like next Js does leading to a perfectly styled and smooth application without any additional code and set up neccessary.
