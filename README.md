@@ -5,6 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## APIS
 
 Data Fetched from : https://dummyjson.com/docs/products
+
 NEXT JS, 
 
 TYPESCRIPT,
