@@ -5,10 +5,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## APIS
 
 Data Fetched from : https://dummyjson.com/docs/products
-NEXT JS,
+NEXT JS, 
+
 TYPESCRIPT,
+
 EMOTION/STYLED COMPONENT,
+
 REACT-ICONS,
+
 REDUX TOOLKIT
 
 ## About N$xt Store
