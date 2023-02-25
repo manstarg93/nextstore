@@ -13,7 +13,15 @@ REDUX TOOLKIT
 
 ## About N$xt Store
 
-Next Store is an E-commerce web application that provides users with a list of purchasable fashion products including clothing, fragrances and skincare . Next store was built for my portfolio and ##Learning Purpose
+Next Store is an E-commerce web application that provides users with a list of purchasable fashion products including clothing, fragrances and skincare . Next store was built for my portfolio and ##Learning Purpose.
+
+## Funtionality:
+
+Navigating to specific products
+Filtering products
+Adding products to cart and updating cart
+Calculating products total price based of amount in cart
+Removing products from cart
 
 Website link can be found here https://nextstore-topaz.vercel.app/
 
@@ -28,35 +36,31 @@ I also wanted the images to load very fast but also only load when they are requ
 In this phase it was important to visualise and have some understanding of how the page will look like and also the functionality.
 When a user visits the page they will be brought to the index page which will have a list of some of the products . The navigation and Ui needed to be clean and easy to access other pages.
 
-# Routes
+## Routes
 
-# Home
+Home
 
-# Home > Mens
+Home > Mens
 
-# Home > Womens
+Home > Womens
 
-# Home > SkinCare
+Home > SkinCare
 
-# Home > Fagrances
+Home > Fagrances
 
-# Home > ProductParams > Chekout
-
-## Learn More
-
-# Home > Mens
+Home > ProductParams > Chekout
 
 ## Problems and Solution
 
-# Problem 1
+Problem 1
 
 Understanding how the get static props and static paths works was difficult at first, but reading through the nextjs documention and understanding the best practices helped mee appreciate what they do. they were veery important for Pre rendering the data that was fetched.
 
-# Problem 2
+Problem 2
 
 Loading the images using the Image tag instead of the img tag was very frustrating at first because the images wernt been loaded but i was able to eventually resolve this issue by using the documentation and most importantly as weel as google and how other developers fixed the issues.
 
-# Problem 3
+Problem 3
 
 Because I use Styled components, I came accross a big problem it had with Next js which is that the styles weree only been loaded on the client side which ended up leading to massive Cummulative Layout Shift because the styles wearn't. The first solution was writing additional boiler plate code and more complicated set ups but it wasnt efficient.
 
