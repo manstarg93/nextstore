@@ -23,9 +23,17 @@ Next Store is an E-commerce web application that provides users with a list of p
 ## Funtionality:
 
 Navigating to specific products
+
+
 Filtering products
+
+
 Adding products to cart and updating cart
+
+
 Calculating products total price based of amount in cart
+
+
 Removing products from cart
 
 Website link can be found here https://nextstore-topaz.vercel.app/
