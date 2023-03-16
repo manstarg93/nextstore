@@ -17,7 +17,7 @@ import { HiOutlineMenuAlt1 } from 'react-icons/hi';
 import Link from 'next/link';
 import { showCart } from '@/features/store/cartSlice';
 
-const Navigation = () => {
+const Navigation = ({}) => {
   const dispatch = useAppDispatch();
 
   const { cart } = useAppSelector((state) => state.cart);
@@ -33,7 +33,7 @@ const Navigation = () => {
         <NavItems data={navData} />
 
         <CartIconContainer onClick={() => dispatch(showCart())}>
-          <CartCounter>{cart.length}</CartCounter>
+          <CartCounter>{cart? cart.length : 0}</CartCounter>
           <BsCart />
         </CartIconContainer>
       </NavContainer>

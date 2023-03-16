@@ -16,26 +16,30 @@ export const productPreviewHandler = (
   const productPreview = [
     {
       id: 1,
-      staticTitle: 'Shop Womens',
+      title: 'Shop Womens',
       thumbnail: extractSingleImage(womensDress, 2),
+      description: `Elegant womens products`,
       link: '/womens',
     },
     {
       id: 2,
-      staticTitle: 'Shop Mens',
+      title: 'Shop Mens',
       thumbnail: extractSingleImage(mensShirt, 4),
+      description: `Top mens products`,
       link: '/mens',
     },
     {
       id: 3,
-      staticTitle: 'Shop Skin care',
+      title: 'Shop Skin care',
       thumbnail: extractSingleImage(skinCare, 2),
+      description: `Reefreshing and smooth skin`,
       link: '/skincare',
     },
     {
       id: 4,
-      staticTitle: 'Shop Fragrances',
+      title: 'Shop Fragrances',
       thumbnail: extractSingleImage(fragrances, 2),
+      description: `Delightful aroma `,
       link: '/fragrances',
     },
   ];

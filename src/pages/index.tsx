@@ -13,9 +13,6 @@ import {
 
 import Layout from '../components/layout/Layout';
 
-const ProductDisplay = dynamic(
-  () => import('../features/products/ProductDisplay')
-);
 import { IProducts } from '@/components/types/productTypes';
 const ProductGrid = dynamic(() => import('@/features/products/ProductGrid'));
 
@@ -25,11 +22,16 @@ import {
   productPreviewHandler,
 } from '@/features/products/productHelperFunction';
 
+const CaptionFadeCard = dynamic(
+  () => import('../components/card/CaptionFadeCard')
+);
+
 const LargeItem = dynamic(() => import('../components/cta/LargeItem'));
 import PageSummary from '@/features/summary/PageSummary';
 import Header from '@/features/headercta/Header';
 import dynamic from 'next/dynamic';
 import HeadComponent from '@/components/HeadComponent';
+import { useRouter } from 'next/router';
 
 interface Iindex {
   mensShirt: IProducts;
@@ -43,10 +45,8 @@ interface Iindex {
 
 export default function Home({
   mensShirt,
-  mensShoes,
-  mensWatches,
+
   womensDress,
-  womensShoes,
 
   skinCare,
   fragrances,
@@ -58,18 +58,15 @@ export default function Home({
         <Header />
         <ProductGrid
           gridRow="2/3"
-          title={'Womens dress'}
-          products={womensDress}
-        >
-          {productPreviewHandler(
+          title={'Our Products'}
+          products={productPreviewHandler(
             womensDress,
             mensShirt,
             skinCare,
             fragrances
-          ).map((product) => {
-            return <ProductDisplay key={product.id} {...product} />;
-          })}
-        </ProductGrid>
+          )}
+        />
+
         <LargeItem
           link="/fragrances"
           description="Long lasting refreshing memories of a simple fresh dream."
@@ -77,18 +74,9 @@ export default function Home({
         <ProductGrid
           gridRow="4/5"
           title={'latest skincare products'}
-          products={skinCare}
-        >
-          {skinCare.slice(1, 5).map((product) => {
-            return (
-              <ProductDisplay
-                key={product.id}
-                {...product}
-                link={productLink(product.id)}
-              />
-            );
-          })}
-        </ProductGrid>
+          products={skinCare.slice(1, 5)}
+        />
+
         <PageSummary gridRow="5/6" />
       </Layout>
     </>

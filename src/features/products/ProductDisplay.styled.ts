@@ -38,8 +38,6 @@ export const ProductImage = styled(Image)`
   &:hover {
     transform: scale(1.03);
   }
-  @media screen and (min-width: ${device.laptop}) {
-  }
 `;
 
 export const CaptionContainer = styled.div`

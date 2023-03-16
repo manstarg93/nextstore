@@ -20,22 +20,28 @@ export const ProductGridTitle = styled.h2`
   font-weight: lighter;
 `;
 
+export const ProductContainer = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+`;
+
 export const ProjectGridItemContainer = styled.div`
   text-align: center;
   display: grid;
 
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, max-content));
   width: 100%;
 
   transition: all 0.4s linear;
 
   @media screen and (min-width: ${device.laptop}) {
     grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+    grid-gap: 1rem;
   }
 `;
 

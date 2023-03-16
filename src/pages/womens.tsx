@@ -5,7 +5,7 @@ import ProductFilter from '@/components/ui/ProductFilter';
 import { womensDropdown } from '@/components/ui/productFilterTypes';
 import ProductGrid from '@/features/products/ProductGrid';
 import ProductsHeader from '@/features/headercta/ProductsHeader';
-import ProductDisplay from '@/features/products/ProductDisplay';
+
 import { useAppSelector } from '@/hooks/reduxHooks';
 import { useResetProductDropdown } from '@/hooks/resetProductDropDown';
 import {
@@ -45,53 +45,19 @@ export default function Womens({
           <>
             {[womensDress, womensShoes, womensWatches].map(
               (womensProduct, index) => {
-                return (
-                  <ProductGrid key={index} products={womensProduct}>
-                    {womensProduct?.map((product) => (
-                      <ProductDisplay
-                        {...product}
-                        key={product.id}
-                        link={productLink(product.id)}
-                      />
-                    ))}
-                  </ProductGrid>
-                );
+                return <ProductGrid key={index} products={womensProduct} />;
               }
             )}
           </>
         )}
         {productFilterOption === 'womens dress' && (
-          <ProductGrid products={womensDress}>
-            {womensDress?.map((product) => (
-              <ProductDisplay
-                {...product}
-                key={product.id}
-                link={productLink(product.id)}
-              />
-            ))}
-          </ProductGrid>
+          <ProductGrid products={womensDress} />
         )}
         {productFilterOption === 'womens watches' && (
-          <ProductGrid products={womensWatches}>
-            {womensWatches?.map((product) => (
-              <ProductDisplay
-                {...product}
-                key={product.id}
-                link={productLink(product.id)}
-              />
-            ))}
-          </ProductGrid>
+          <ProductGrid products={womensWatches} />
         )}
         {productFilterOption === 'womens shoes' && (
-          <ProductGrid products={womensShoes}>
-            {womensShoes?.map((product) => (
-              <ProductDisplay
-                {...product}
-                key={product.id}
-                link={productLink(product.id)}
-              />
-            ))}
-          </ProductGrid>
+          <ProductGrid products={womensShoes} />
         )}
       </Layout>
     </>

@@ -3,7 +3,7 @@ import Layout from '@/components/layout/Layout';
 import { IProducts } from '@/components/types/productTypes';
 import ProductGrid from '@/features/products/ProductGrid';
 import ProductsHeader from '@/features/headercta/ProductsHeader';
-import ProductDisplay from '@/features/products/ProductDisplay';
+
 import { getFragrances, getSkincare } from '@/lib/fetchData';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import { productLink } from '@/features/products/productHelperFunction';
@@ -21,15 +21,7 @@ export default function Skincare({ fragrances }: IWomens) {
           title="Memory Fragrances"
           description="Long lasting refreshing memories of a simple fresh dream."
         />
-        <ProductGrid products={fragrances}>
-          {fragrances?.map((product) => (
-            <ProductDisplay
-              {...product}
-              key={product.id}
-              link={productLink(product.id)}
-            />
-          ))}
-        </ProductGrid>
+        <ProductGrid products={fragrances} />
       </Layout>
     </>
   );
