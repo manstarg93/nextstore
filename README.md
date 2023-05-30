@@ -27,7 +27,7 @@ Website link can be found here https://nextstore-topaz.vercel.app/
 
 ## Planning
 
-The goal of N$xt Store is to have a full understanding of how NextJs works with react, I wanted any web app that I build in the future to not only be super fast but have great SEO also, hense that was the reason why I chosee nextjs because it offers server side rendering out of the box meaning the page contents are already pre rendered on the srver side and made available to thee client and google crawler as soon as possible.
+The goal of Next Store is to have a full understanding of how NextJs works with react, I wanted any web app that I build in the future to not only be super fast but have great SEO also, hence the reason why I chose to use nextjs with react because it offers server side rendering out of the box, meaning the page contents are already pre rendered on the server side and made available to the client and google crawlers as soon as possible.
 
 I also wanted the images to load very fast but also only load when they are required to improve loading spead and better user experience.
 
